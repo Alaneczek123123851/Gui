@@ -1,4 +1,3 @@
-
 if game.PlaceId == 383793228 then
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("Adopt and Raise a Baby - PolandHub", "Sentinel")
@@ -93,5 +92,32 @@ end)
 end)
 Taabb:NewSlider("Speed", "", 300, 16, function(s)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+end
+
+
+if game.PlaceId == 155615604 then
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Prison Life - PolandHub", "Sentinel")
+local Cotam = Window:NewTab("Zionek Scripts")
+local Cotam = Cotam:NewSection("Milej zabawy")
+    Cotam:NewButton("Daje ci bronie", "Daje ci wszystkie bronie", function()
+local args = {
+    [1] = workspace.Prison_ITEMS.giver:FindFirstChild("Remington 870").ITEMPICKUP
+}
+
+workspace.Remote.ItemHandler:InvokeServer(unpack(args))
+
+local args = {
+    [1] = workspace.Prison_ITEMS.giver.M9.ITEMPICKUP
+}
+
+workspace.Remote.ItemHandler:InvokeServer(unpack(args))
+
+local args = {
+    [1] = workspace.Prison_ITEMS.giver:FindFirstChild("AK-47").ITEMPICKUP
+}
+
+workspace.Remote.ItemHandler:InvokeServer(unpack(args))
 end)
 end
