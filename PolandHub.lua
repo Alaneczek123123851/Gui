@@ -26,7 +26,7 @@ end)
 Taab:NewButton("Daj hajs 1000$", "Gives Moni", function()
     game.ReplicatedStorage.NetworkEvent:FireServer("AwardCash", 1000)
 end)
-Taab:NewButton("Daj hajs5000$", "Gives Moni", function()
+Taab:NewButton("Daj hajs 5000$", "Gives Moni", function()
     game.ReplicatedStorage.NetworkEvent:FireServer("AwardCash", 5000)
 end)
 Taab:NewButton("Daj hajs 10000$", "Gives Moni", function()
@@ -147,5 +147,20 @@ TeamyNeigh:NewButton("Swat", "", function()
 }
 
 game:GetService("Players").LocalPlayer.Remotes.MainEvent:FireServer(unpack(args))
+end)
+end
+
+if game.PlaceId == 4999590694 then
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Zombie Defense Tycoon - PolandHub", "Sentinel")
+local Main = Window:NewTab("Teamy")
+local Main = Main:NewSection("")
+Main:NewButton("Goo", "Daje ci Goo Jezeli jest na mapie", function()
+local args = {
+    [1] = "CollectDeposit",
+    [2] = workspace.GooDeposits.Goo
+}
+
+game:GetService("ReplicatedStorage").CIient:FireServer(unpack(args))
 end)
 end
